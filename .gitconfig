@@ -1,0 +1,84 @@
+[user]
+	name = Kevin Ashworth
+	email = kevinashworth@yahoo.com
+[github]
+	user = kevinashworth
+	token = 2c688a6273be557c4b96fba790182190
+[core]
+	editor = code --new-window --wait
+	excludesfile = /Users/kevin/.gitignore_global
+	pager = delta
+[delta]
+	# light = true
+	line-numbers = true
+	navigate = true
+	side-by-side = true
+[interactive]
+	diffFilter = delta --color-only
+[merge]
+	conflictstyle = diff3
+[diff]
+	colorMoved = default
+#[alias]
+#	last = log -1 HEAD
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = ~/.stCommitMsg
+[color]
+	ui = true
+	interactive = auto
+	branch = auto
+	diff = auto
+	status = auto
+[alias]
+	discard = checkout --
+	includes = branch --contains
+	slap = blame -w
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	lg = log --oneline --decorate --all --graph
+	s = status --short
+	state = status -sb
+	top = shortlog -s -n
+	current = log --pretty=format:\"%h %ad | %s%d [%an]\" --date=short -n1
+	last = log -n 1 -p
+	hist = log --pretty=format:'%h %an %Cred%ar %Cgreen%s' --date=short --decorate
+	files = show --pretty=\"format:\" --name-only
+
+	################################################################################################
+	today = log --pretty=format:\"* %s%d [%h]\" --no-merges --date=short --author=kevinashworth --since=\"$DATE 00:00:00\" --until=\"$DATE 24:00:00\"
+	mine = log --pretty=format:\"[ %h ] %ad - %s%d\" --no-merges --date=short --author=kevinashworth
+	#####################################################################################################
+
+	push-all = push --recurse-submodules=on-demand
+	detail-reflog = log --walk-reflogs
+	go-next = checkout HEAD@{1}
+	go-prev = checkout HEAD^1
+	type = cat-file -t
+	datetag = '!git tag `date "+%Y%m%d%H%M"`'
+# https://git-blame.blogspot.com/2012/08/leftover-bits.html
+# use with git for-each-ref refs/hold/
+	hold = "!sh -c 'git update-ref refs/hold/$1 refs/heads/$1 && git branch -D $1' -"
+[credential]
+	helper = osxkeychain
+[pager]
+	branch = false
+[init]
+	defaultBranch = main
+[fetch]
+	prune = true
