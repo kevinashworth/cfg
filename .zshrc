@@ -148,3 +148,6 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 # Added 2022-02-14. See https://github.com/zsh-users/zsh-autosuggestions#disabling-suggestion-for-large-buffers
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+
+# Added 2022-06-10 after `brew install openjdk` for firebase local emulator
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
