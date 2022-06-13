@@ -1,0 +1,9 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [80, 120],
+  "editor.scrollBeyondLastLine": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "window.title": "${rootName}${separator}${activeEditorMedium}",
+  "workbench.colorTheme": "Default Light+"
+}
