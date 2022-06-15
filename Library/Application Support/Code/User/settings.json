@@ -1,9 +1,16 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.inlineSuggest.enabled": true,
   "editor.renderWhitespace": "boundary",
   "editor.rulers": [80, 120],
   "editor.scrollBeyondLastLine": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "window.title": "${rootName}${separator}${activeEditorMedium}",
-  "workbench.colorTheme": "Default Light+"
+  "workbench.colorTheme": "Default Light+",
+  "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
